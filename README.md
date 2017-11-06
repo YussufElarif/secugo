@@ -1,0 +1,2 @@
+# secugo
+Secuirty Hugo
