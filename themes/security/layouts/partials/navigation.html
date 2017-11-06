@@ -1,10 +1,32 @@
-<nav>
-    navigation
-    {{ .Site.Title }}
-
-    {{ if .Site.Menus.main }}
-        {{ range .Site.Menus.main }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-center" href="/" >{{ .Site.Title }}</a>
+        </div>
+        {{ if .Site.Menus.main }}
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {{ range .Site.Menus.main }}
+                        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
         {{ end }}
-    {{ end }}
+    </div>
 </nav>
+
+<style>
+    nav {
+
+    }
+    nav.navbar .navbar-header button {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+</style>

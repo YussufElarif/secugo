@@ -1,4 +1,25 @@
-<header>
-    header
-    {{ partial "navigation.html" . }}
-</header>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>{{ .Title | default .Site.Title }}</title>
+
+    <link href='{{ "css/bootstrap.min.css" | absURL }}' rel='stylesheet' type="text/css" />
+</head>
+
+<body>
+    <header>
+        {{ if .Params.featured_image }}
+            <div class="jumbotron"></div>
+        {{ end }}
+
+        {{ partial "navigation.html" . }}
+    </header>
+
+    <style>
+        header div.jumbotron {
+            margin-bottom: 0;
+            height: 250px;
+        }
+    </style>
+
+    <main class="container">
