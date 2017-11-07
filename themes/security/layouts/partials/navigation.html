@@ -10,7 +10,7 @@
             <a class="navbar-brand text-center" href="/" >{{ .Site.Title }}</a>
         </div>
         {{ if .Site.Menus.main }}
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse text-center">
                 <ul class="nav navbar-nav">
                     {{ range .Site.Menus.main }}
                         <li><a href="{{ .URL }}">{{ .Name }}</a></li>
@@ -22,9 +22,18 @@
 </nav>
 
 <style>
-    nav {
-
+    div.collapse.navbar-collapse  {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
+
+    div.collapse.navbar-collapse ul, div.collapse.navbar-collapse li {
+        float: none;
+    }
+
     nav.navbar .navbar-header button {
         margin-right: 0;
         margin-left: 10px;
