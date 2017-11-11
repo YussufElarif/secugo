@@ -12,16 +12,25 @@
     <header>
         {{ if .Params.featured_image }}
             <div class="jumbotron"></div>
+            <style>
+                header div.jumbotron {
+                    margin-bottom: 0;
+                    height: 300px;
+                    background-image: url({{ .Params.featured_image }});
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 50% 50%;
+                }
+            </style>
         {{ end }}
 
         {{ partial "navigation.html" . }}
     </header>
 
-    <style>
-        header div.jumbotron {
-            margin-bottom: 0;
-            height: 250px;
-        }
-    </style>
 
     <main class="container">
+    <style>
+        main.container {
+            padding-top: 0;
+        }
+    </style>
